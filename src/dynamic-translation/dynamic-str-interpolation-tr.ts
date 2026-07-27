@@ -12,7 +12,7 @@ export class DynamicStrInterpolationTr extends StrInterpolationTr {
 
     /**
      * Prepare and process to a translation to a string interpolation `${}`
-     * @param langFileSrcTr the source translation from the langage file
+     * @param langFileSrcTr the source translation from the language file
      * @param idTr the id of this translation
      */
     constructor(langFileSrcTr: string, idTr: string) {

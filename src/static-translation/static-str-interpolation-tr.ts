@@ -13,8 +13,8 @@ export class StaticStrInterpolationTr extends StrInterpolationTr {
 
     /**
      * Prepare and process to a translation to a string interpolation `${}`
-     * @param langFileSrcTr the source translation from the langage file
-     * @param langFileOutTr the output translation from the langage file
+     * @param langFileSrcTr the source translation from the language file
+     * @param langFileOutTr the output translation from the language file
      */
     constructor(langFileSrcTr: string, langFileOutTr: string) {
         super(langFileSrcTr);

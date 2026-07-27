@@ -3,8 +3,8 @@
 
 To translate your string using string interpolation use the `"${}"` indication in the translation data file.  
 
-If the variable call in the string interpolation have the same order in every langage, the `"${}"` indication can stay empty.  
-But if the variable order is different bewteen two langages, use the an id in the `"${}"` indication.
+If the variable call in the string interpolation have the same order in every language, the `"${}"` indication can stay empty.  
+But if the variable order is different bewteen two languages, use the an id in the `"${}"` indication.
 
 ## Static mode
 
@@ -51,7 +51,7 @@ console.log( dynamic_translation_post_tsc_1.translate.code_0?.with(userName1, nb
 console.log( dynamic_translation_post_tsc_1.translate.code_0?.with(userName2, nbCow2) );
 ```
 
-The order in the JS file is the same for the source langage. But when the translation is call, the order can be reversed if needed.
+The order in the JS file is the same for the source language. But when the translation is call, the order can be reversed if needed.
 
 
 ## Examples in translation data file

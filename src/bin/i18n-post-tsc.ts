@@ -48,7 +48,7 @@ function parseArgs(): ParsedArgs {
             demandOption: true,
             type: 'string',
             choices: ['static', 'dynamic'],
-            description: "execution mode. Static to translate once after ts compilation. Dynamic to change translation langage in run time."
+            description: "execution mode. Static to translate once after ts compilation. Dynamic to change translation language in run time."
         })
         .option('srcDir', {
             alias: "s",
@@ -71,12 +71,12 @@ function parseArgs(): ParsedArgs {
         .option('outLang', {
             alias: "l",
             type: 'string',
-            description: "the output langage for the static translation"
+            description: "the output language for the static translation"
         })
         .option('fallbackLang', {
             alias: "f",
             type: 'array',
-            description: "the fallback langage for the static translation"
+            description: "the fallback language for the static translation"
         })
 
         // dynamic mode parameter

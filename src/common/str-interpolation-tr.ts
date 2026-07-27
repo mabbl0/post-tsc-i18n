@@ -9,13 +9,13 @@ export const reStrInterContent = /(?<=\$\{)[^\}]*(?=\})/g;
  * to a string interpolation `${}`
  */
 export class StrInterpolationTr {
-    readonly reSrcTr: RegExp // regex to find the sring to translate in the source langage
+    readonly reSrcTr: RegExp // regex to find the sring to translate in the source language
     readonly strInterSrcId: string[] // the id of the string interpolation in source translation
     protected ready: boolean;
 
     /**
      * Prepare and process to a translation to a string interpolation `${}`
-     * @param langFileSrcTr the source translation from the langage file
+     * @param langFileSrcTr the source translation from the language file
      */
     constructor(langFileSrcTr: string) {
         this.ready = false;
@@ -117,7 +117,7 @@ export class StrInterpolationTr {
     
     /**
      * indicate if the translation is a string interpolation translation
-     * @param langFileTr the translation from the langage file
+     * @param langFileTr the translation from the language file
      * @returns indicate if the translation is a string interpolation translation
      */
     static isStrInterpolationTr(langFileTr: string): boolean {

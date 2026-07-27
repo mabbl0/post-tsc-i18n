@@ -9,7 +9,7 @@ For the **Dynamic** translation you need to use the `dynamic-translation-post-ts
 `dynamic-translation-post-tsc` features:  
 - Simple and minimum performance impact.
 - Easy to implement. Minimum impact in your existing code.
-- **Dynamic translation**. The access to the translation is injected in the JS files. You just need to initiation and change the langage in run time.
+- **Dynamic translation**. The access to the translation is injected in the JS files. You just need to initiation and change the language in run time.
 - [String interpolation](https://github.com/mabbl0/i18n-post-tsc/blob/main/documentation/string-interpolation.md) "`${}`" translation.
 - Translation data file to contain the translation for one or several files.
 
@@ -48,8 +48,8 @@ Add a [translation data file](https://github.com/mabbl0/i18n-post-tsc/blob/main/
 }
 ```
 
-Write your TS code with the string in the langage you want.  
-Use in your code the `dynamic-translation-post-tsc` module to initiate the data, and to change the target langage:
+Write your TS code with the string in the language you want.  
+Use in your code the `dynamic-translation-post-tsc` module to initiate the data, and to change the target language:
 
 ```ts
 // src/code.ts

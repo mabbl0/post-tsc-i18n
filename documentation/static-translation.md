@@ -14,12 +14,12 @@ In static mode, the `i18n-post-tsc` command:
 
 ## Your TS code source
 
-No need to adapt your code source. Write your code as usuall, in your favourite langage.  
+No need to adapt your code source. Write your code as usuall, in your favourite language.  
 Use the `'`, `"` or `` ` `` delimeters for your string.  
 Be free to use the [string interpolation](https://github.com/mabbl0/i18n-post-tsc/blob/main/documentation/string-interpolation.md): `` `${}` ``
 
-Two files can be code in two differents langages.
-But, all the string in one file must be in the same langage. 
+Two files can be code in two differents languages.
+But, all the string in one file must be in the same language. 
 
 ```ts
 // src/code.ts
@@ -30,7 +30,7 @@ console.log(`Hello ${userName}!`); // "Bonjour Jean !!"
 
 ## The translation data files
 
-Same for the static or dynamic mode, the translation data files indicates to the `i18n-post-tsc` module the files to find, the string to replace, and the their possibles translations in differents langages.  
+Same for the static or dynamic mode, the translation data files indicates to the `i18n-post-tsc` module the files to find, the string to replace, and the their possibles translations in differents languages.  
 One data file can include the translation for one or several files.  
 The data translations files are `json` files, with the `.lang.json` extension.
 
@@ -71,10 +71,10 @@ The arguments for the static mode command:
 - mode: 'static' or 'dynamic'. Required
 - srcDir: indicate directory path to find the translation data files. Required
 - outDir: indicate directory path to the JS files with the string to translate. Required
-- outLang: indicate the langage to translate. Required
+- outLang: indicate the language to translate. Required
 
 - uniqueOutFile: indicate a unique output JS files (index.js for example). Not Required
-- fallbackLang: indicate the fallback langages, in the case if the target langage is not available for some translation. Not required
+- fallbackLang: indicate the fallback languages, in the case if the target language is not available for some translation. Not required
 
 
 ## Result

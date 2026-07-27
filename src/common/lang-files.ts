@@ -26,7 +26,7 @@ interface ReadLangFileParam {
 }
 
 /**
- * find and read the langages files
+ * find and read the languages files
  * @param srcPath the path to the source directory
  * @param uniqueOutFile indicate a unique output JS files (index.js for example)
  * @param callback callback call when every files are read
@@ -142,7 +142,7 @@ function checkLangFileData(data: LangFileData, filePath: string | undefined): bo
     // check if every translation the source lang
     for (let i = 0; i < data.translations.length; i++) {
         if (data.translations[i][data.srcLang] == undefined) {
-            log(LogLevel.Error, `the translation ${data.translations[i].toString()} from the '${filePath}' lang file don't contain the source langage`);
+            log(LogLevel.Error, `the translation ${data.translations[i].toString()} from the '${filePath}' lang file don't contain the source language`);
             return false;
         }
     }

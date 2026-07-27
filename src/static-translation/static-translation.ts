@@ -86,10 +86,10 @@ function prepareTranslationData(langFiles: LangFile[], staticTrParam: StaticTran
 }
 
 /**
- * Choose a output langage translation, if possible
+ * Choose a output language translation, if possible
  * @param tr the data translation
- * @param outLangWanted the output langages wanted list
- * @returns the output langage to translate
+ * @param outLangWanted the output languages wanted list
+ * @returns the output language to translate
  */
 function chooseOutTr(tr: LangTranslation, outLangWanted: string[]): string | undefined {
     for (let i = 0; i < outLangWanted.length; i++) {

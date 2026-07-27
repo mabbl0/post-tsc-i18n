@@ -13,7 +13,7 @@ export interface LangFileData {
      */
     filePath?: string
     /**
-     * the langage in the source file
+     * the language in the source file
      */
     srcLang: string
     /**
@@ -34,7 +34,7 @@ export interface LangFile {
 
 /**
  * The different translation for one string
- * where the key is the langage
+ * where the key is the language
  */
 interface LangTranslation {
     [key: string]: string

@@ -13,9 +13,9 @@ export interface TranslationParam {
  * The parameter for the static translation
  */
 export interface StaticTranslationParam extends TranslationParam {
-    /** output langage result after translation */
+    /** output language result after translation */
     outLang: string
-    /** fallback langage if outLang is not possible */
+    /** fallback language if outLang is not possible */
     fallbackLang?: string[]
 }
 

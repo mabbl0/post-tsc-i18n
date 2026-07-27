@@ -1,6 +1,6 @@
 # Dynamic Translation
 
-To apply a **dynamic** translation, use the `i18n-post-tsc` module in dynamic mode to prepapre the JS files and the translation data, and the `dynamic-translation-post-tsc` package in your code to initiate the data and change the langage to use.
+To apply a **dynamic** translation, use the `i18n-post-tsc` module in dynamic mode to prepapre the JS files and the translation data, and the `dynamic-translation-post-tsc` package in your code to initiate the data and change the language to use.
 
 
 # Working
@@ -13,23 +13,23 @@ In dynamic mode, the `i18n-post-tsc` command:
 
 At the start execution, the `dynamic-translation-post-tsc` initialization:
 - read the dynamic translation data file
-- prepare a base translation for every translation, in the case if wanted langage is not available for some translation
-- and initiate the translation to the started langage 
+- prepare a base translation for every translation, in the case if wanted language is not available for some translation
+- and initiate the translation to the started language 
 
 In run time, the replaced string access directly to their current translation.
 
-the `dynamic-translation-post-tsc` package gives the possibility to change the langage.
+the `dynamic-translation-post-tsc` package gives the possibility to change the language.
 
 # Usage
 
 ## Your TS code source
 
-Write your code as usuall, in your favourite langage.  
+Write your code as usuall, in your favourite language.  
 Use the `'`, `"` or `` ` `` delimeters for your string.  
 Be free to use the [string interpolation](https://github.com/mabbl0/i18n-post-tsc/blob/main/documentation/string-interpolation.md): `` `${}` ``
 
-Two files can be code in two differents langages.
-But, all the string in one file must be in the same langage. 
+Two files can be code in two differents languages.
+But, all the string in one file must be in the same language. 
 
 ```ts
 // src/code.ts
@@ -54,14 +54,14 @@ dynamic_translation_post_tsc.initDynamicTr({
 
 The parameters for the `initDynamicTr` function are:
 - outDir: Output directory to find the dynamic translation data file. Required
-- langStart: The langage to start the translation. Required
+- langStart: The language to start the translation. Required
 
 - dynamicTrData: Path to the data for the dynamic translation file from the output directory. "dynamicTrData.lang.json" by default. Not required
-- fallbackLang: the fallback langage if the wanted langage translation is not available. Not required
+- fallbackLang: the fallback language if the wanted language translation is not available. Not required
 
-### Run time Langage change
+### Run time language change
 
-In run time, change the wanted langage with the `dynamic-translation-post-tsc` package:
+In run time, change the wanted language with the `dynamic-translation-post-tsc` package:
 
 ```ts
 // src/code.ts
@@ -70,11 +70,11 @@ import dynamic_translation_post_tsc from "dynamic-translation-post-tsc";
 dynamic_translation_post_tsc.lang('en');
 ```
 
-Indicate the wanted langage in parameter.
+Indicate the wanted language in parameter.
 
 ## The translation data files
 
-Same for the static or dynamic mode, the translation data files indicates to the `i18n-post-tsc` module the files to find, the string to replace, and the their possibles translations in differents langages.  
+Same for the static or dynamic mode, the translation data files indicates to the `i18n-post-tsc` module the files to find, the string to replace, and the their possibles translations in differents languages.  
 One data file can include the translation for one or several files.  
 The data translations files are `json` files, with the `.lang.json` extension.
 

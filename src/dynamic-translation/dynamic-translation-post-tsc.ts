@@ -32,11 +32,11 @@ interface InitDynamicTrParameter {
      */
     dynamicTrData?: string,
     /**
-     * the langage to start the translation
+     * the language to start the translation
      */
     langStart: string,
     /**
-     * the fallback langage if the first langage translation is not available 
+     * the fallback language if the first language translation is not available 
      */
     fallbackLang?: string[],
     /**
@@ -123,7 +123,7 @@ function checkDynamicTrData(dynamicTrJson: DynamicTranslationDataJson | undefine
 /**
  * Initiate the data for the dynamic translation
  * @param dynamicTrJson the data for the dynamic translation file
- * @param fallbackLang the fallback langage
+ * @param fallbackLang the fallback language
  */
 function initDynamicTrData(dynamicTrJson: DynamicTranslationDataJson, fallbackLang: string[]|undefined) {
     /*** Initiate data ***/
@@ -138,11 +138,11 @@ function initDynamicTrData(dynamicTrJson: DynamicTranslationDataJson, fallbackLa
         langData = dynamicTranslationData.data.get(langTrDataJson.lang);
         if(langData != undefined) {
             Object.assign(langData, parseJsonLangData(langTrDataJson.tr)); // complete and replace the property already in the object
-            log(LogLevel.Debug, langTrDataJson.nbTr, 'new translations added to the', langTrDataJson.lang, 'langage');
+            log(LogLevel.Debug, langTrDataJson.nbTr, 'new translations added to the', langTrDataJson.lang, 'language');
         }
         else {
             dynamicTranslationData.data.set(langTrDataJson.lang, parseJsonLangData(langTrDataJson.tr));
-            log(LogLevel.Debug, 'langage', langTrDataJson.lang, 'added with', langTrDataJson.nbTr, 'translations');
+            log(LogLevel.Debug, 'language', langTrDataJson.lang, 'added with', langTrDataJson.nbTr, 'translations');
         }
         langNb = dynamicTranslationData.dataNbTr.get(langTrDataJson.lang);
         if(langNb != undefined) {
@@ -231,7 +231,7 @@ function parseJsonLangData(trDataJson: TranslationsDataJson): LangTranslationsDa
 export function lang(newLang: string) {
     if(dynamicTranslationData.nbBaseTr == 0) {
         // no data loaded
-        log(LogLevel.Error, "No data to change translation langage");
+        log(LogLevel.Error, "No data to change translation language");
         return;
     }
 
@@ -249,11 +249,11 @@ export function lang(newLang: string) {
             // then apply the translation choosen
             Object.assign(translate, newTrData); // complete and replace the property already in the object
         }
-        log(LogLevel.Info, `Change langage translation to '${newLang}'`);
+        log(LogLevel.Info, `Change language translation to '${newLang}'`);
         log(LogLevel.Debug, 'new translate:', translate);
     }
     else {
-        log(LogLevel.Error, `the langage '${newLang}' is not available with the dynamic translation data`);
+        log(LogLevel.Error, `the language '${newLang}' is not available with the dynamic translation data`);
     }
 }
 

@@ -1,7 +1,7 @@
 
 # Translation data files
 
-Same for the static or dynamic mode, the translation data files indicates to the `i18n-post-tsc` module the files to find, the string to replace, and the their possibles translations in differents langages.
+Same for the static or dynamic mode, the translation data files indicates to the `i18n-post-tsc` module the files to find, the string to replace, and the their possibles translations in differents languages.
 
 One data file can include the translation for one or several files.
 
@@ -28,7 +28,7 @@ interface LangFileData {
      */
     filePath?: string
     /**
-     * the langage in the source file
+     * the language in the source file
      */
     srcLang: string
     /**
@@ -39,7 +39,7 @@ interface LangFileData {
 
 /**
  * The different translation for one string
- * where the key is the langage
+ * where the key is the language
  */
 interface LangTranslation {
     [key: string]: string
