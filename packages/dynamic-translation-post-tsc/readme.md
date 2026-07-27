@@ -7,8 +7,8 @@ The `i18n-post-tsc` module can apply a **Static** or **Dynamic** translation.
 For the **Dynamic** translation you need to use the `dynamic-translation-post-tsc` package.
 
 `dynamic-translation-post-tsc` features:  
-- Simple and minimum performance impact.
-- Easy to implement. Minimum impact in your existing code.
+- Simple and no performance impact.
+- Easy to implement. No impact in your existing code.
 - **Dynamic translation**. The access to the translation is injected in the JS files. You just need to initiation and change the language in run time.
 - [String interpolation](https://github.com/mabbl0/i18n-post-tsc/blob/main/documentation/string-interpolation.md) "`${}`" translation.
 - Translation data file to contain the translation for one or several files.
@@ -77,7 +77,7 @@ Then, run the `i18n-post-tsc` command with the `dynamic` mode to apply the trans
 npx i18n-post-tsc --mode dynamic --srcDir src --outDir dist
 ```
 
-The `i18n-post-tsc` module replace the string in your JS files to access to their current translation.  
+The `i18n-post-tsc` module replace the string in your JS files by an access to their current translation.  
 In run time, the `dynamic-translation-post-tsc` module initiates the data, and enables the replaced string to access to their current translation.
 
 See the [dynamic translation documentation](https://github.com/mabbl0/i18n-post-tsc/blob/main/documentation/dynamic-translation.md) for more details.

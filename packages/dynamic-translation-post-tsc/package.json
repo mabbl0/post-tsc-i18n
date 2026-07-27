@@ -1,5 +1,5 @@
 {
-  "name": "dynamic-translation",
+  "name": "dynamic-translation-post-tsc",
   "version": "0.1.0",
   "description": "Apply a dynamic translation, with a minimum impact. Use with the 'i18n-post-tsc' module",
   "keywords": [
