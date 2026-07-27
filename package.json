@@ -1,6 +1,6 @@
 {
   "name": "i18n-post-tsc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Inject your translations directly into your compiled JS, for a static or dynamic translation, with a minimum impact",
   "keywords": [
     "ts",
