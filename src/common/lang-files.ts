@@ -83,32 +83,32 @@ function readDataLangFile(readParam: ReadLangFileParam) {
             // check and add the data
             let jsonData = JSON.parse(data.toString()) as LangFileContent;
 
-            if ((jsonData as LangFileData).srcLang == undefined && (jsonData as LangFileData[]).forEach != undefined) {
+            let pathFromSrc = rParam.uniqueOutFile!=undefined ? 
+                            rParam.uniqueOutFile : 
+                            path.relative(rParam.srcAbsPath, rParam.langFilesPath[rParam.currentFileIndex]).slice(0, -langFileExt.length) + '.js';
+            
+            if((jsonData as LangFileData).srcLang != undefined) {
+                // data for only one file
+                if (checkLangFileData(jsonData as LangFileData, rParam.langFilesPath[rParam.currentFileIndex])) {
+                    rParam.langFiles.push({
+                        pathFromSrc: pathFromSrc,
+                        data: jsonData as LangFileData
+                    });
+                    log(LogLevel.Verbose, `Read the lang file: ${rParam.langFilesPath[rParam.currentFileIndex]}`);
+                }
+            }
+            else if((jsonData as LangFileData[]).forEach != undefined) {
                 // this file content data for multiple files 
                 (jsonData as LangFileData[]).forEach((d) => {
                     if (checkLangFileData(d, d.filePath)) {
                         rParam.langFiles.push({
-                            pathFromSrc: rParam.uniqueOutFile!=undefined ? 
-                                rParam.uniqueOutFile : d.filePath as string, //trust
+                            pathFromSrc: pathFromSrc,
                             data: d
                         });
                         log(LogLevel.Verbose, `Read the data for the file: ${d.filePath}`);
                     }
                 });
             }
-            else {
-                // data for only one file
-                if (checkLangFileData(jsonData as LangFileData, rParam.langFilesPath[rParam.currentFileIndex])) {
-                    rParam.langFiles.push({
-                        pathFromSrc: rParam.uniqueOutFile!=undefined ? 
-                            rParam.uniqueOutFile : 
-                            path.relative(rParam.srcAbsPath, rParam.langFilesPath[rParam.currentFileIndex]).slice(0, -langFileExt.length) + '.js',
-                        data: jsonData as LangFileData
-                    });
-                    log(LogLevel.Verbose, `Read the lang file: ${rParam.langFilesPath[rParam.currentFileIndex]}`);
-                }
-            }
-
         }
 
         // continue to read the next files
@@ -178,3 +178,26 @@ function isLangFile(pathFile: string): boolean {
         pathFile.search(reExt) != -1;
 }
 
+
+/**
+ * Add the possible path to the list
+ * @param pathToJs path list to the possible js file to translate
+ * @param pathFromSrc path from src to its lang file
+ * @param indicatedFilePath the indicated file path
+ */
+export function addPathToJsFile(pathToJs: string[], pathFromSrc: string, indicatedFilePath: string|undefined) {
+    // first try the same path to the lang file
+    pathToJs.push(pathFromSrc);
+    
+    if (indicatedFilePath != undefined) {
+        // then try the direct path indicated, from dist directory
+        let filePathToAdd = indicatedFilePath;
+        if (path.extname(indicatedFilePath).length == 0) {
+            filePathToAdd += '.js';
+        }
+        pathToJs.push(filePathToAdd);
+
+        // then try a combined path with the lang file path and the indicated path
+        pathToJs.push( path.join( path.dirname(pathFromSrc), filePathToAdd) );
+    }
+}

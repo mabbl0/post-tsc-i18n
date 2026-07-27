@@ -5,6 +5,7 @@ import { StaticStrInterpolationTr } from "./static-str-interpolation-tr";
  */
 export interface StaticLangFile {
     fileName: string
+    /** different path to test */
     pathToJs: string[]
     tr: StaticTranslation[]
 }

@@ -10,7 +10,7 @@ setLogLevel(LogLevel.None);
 
 describe('Static File Translation', () => {
     
-    test(`Static Files Translation in ${pathToTestDir} directory with override output file`, async () => {
+    test(`Static Files Translation in ${pathToTestDir} directory with a unique output file`, async () => {
         // copy the file to translate to a tempory directory
         fs.cpSync(pathToTestDir, pathToTmpDir, 
             {force: true, recursive: true});

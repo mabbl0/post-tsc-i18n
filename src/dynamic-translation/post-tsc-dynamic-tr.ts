@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-import { readLangFiles } from "../common/lang-files";
+import { addPathToJsFile, readLangFiles } from "../common/lang-files";
 import { DynamicTranslationParam } from "../common/translation-parameter";
 import { log, LogLevel } from "../tool/log";
 import { LangFile, LangTranslation } from "../common/lang-file-type";
@@ -58,19 +58,12 @@ function processLangFilesData(langFiles: LangFile[], idModuleName: string, dynam
         // initiate the translation object for the file
         dynamicLangF = {
             fileName: langFiles[i].pathFromSrc,
-            pathToJs: [langFiles[i].pathFromSrc],
+            pathToJs: [],
             data: []
         };
 
-        // add possible path to the file
-        if (langFiles[i].data.filePath != undefined) {
-            if (path.extname(langFiles[i].data.filePath as string).length == 0) {
-                dynamicLangF.pathToJs.push((langFiles[i].data.filePath as string) + '.js');
-            }
-            else {
-                dynamicLangF.pathToJs.push(langFiles[i].data.filePath as string);
-            }
-        }
+        // add the possible path to find the file
+        addPathToJsFile(dynamicLangF.pathToJs, langFiles[i].pathFromSrc, langFiles[i].data.filePath);
 
         // get a unique idTr base for the file
         idTrBase = fileNameToIdTrBase(idModuleName, dynamicLangF.fileName);

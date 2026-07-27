@@ -17,7 +17,7 @@ describe('Static File Translation', () => {
         staticTranslation({
             srcDir: pathToTmpDir,
             outDir: pathToTmpDir,
-            overrideOutFile: undefined,
+            uniqueOutFile: undefined,
             outLang: 'bzh',
             fallbackLang: ['fr']
         });

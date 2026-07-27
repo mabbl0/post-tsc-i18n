@@ -1,6 +1,6 @@
 [
     {
-        "filePath": "code-1",
+        "filePath": "./code-1",
         "srcLang": "en",
         "translations": [
             {
@@ -10,7 +10,7 @@
         ]
     },
     {
-        "filePath": "./sub-dir/sub-code-1",
+        "filePath": "sub-code-1",
         "srcLang": "en",
         "translations": [
             {
