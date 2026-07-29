@@ -68,14 +68,15 @@ npx i18n-post-tsc --mode static --srcDir src --outDir dist --outLang fr
 ```
 
 The arguments for the static mode command:
-- mode: 'static' or 'dynamic'. Required
-- srcDir: indicate directory path to find the translation data files. Required
-- outDir: indicate directory path to the JS files with the string to translate. Required
-- outLang: indicate the language to translate. Required
 
-- uniqueOutFile: indicate a unique output JS files (index.js for example). Not Required
-- fallbackLang: indicate the fallback languages, in the case if the target language is not available for some translation. Not required
-
+| parameter     | description                                                                                               | required |
+| ---------------| -----------------------------------------------------------------------------------------------------------| ----------|
+| mode          | 'static' or 'dynamic'                                                                                     | X        |
+| srcDir        | indicate directory path to find the translation data files                                                | X        |
+| outDir        | indicate directory path to the JS files with the string to translate                                      | X        |
+| outLang       | indicate the language to translate                                                                        | X        |
+| uniqueOutFile | indicate a unique output JS files (index.js for example)                                                  |          |
+| fallbackLang  | indicate the fallback languages, in the case if the target language is not available for some translation |          |
 
 ## Result
 

@@ -8,6 +8,8 @@ import { SimpleStaticTranslation, StaticLangFile, StaticTranslation } from "./tr
 import { StaticStrInterpolationTr } from "./static-str-interpolation-tr";
 
 
+// TODO: give the possibility to not target  some specific string
+
 /**
  * Translate the js files after tsc
  * @param staticTrParam the parameter to the static translation

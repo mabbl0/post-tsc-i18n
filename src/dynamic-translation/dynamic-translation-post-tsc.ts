@@ -50,6 +50,7 @@ interface InitDynamicTrParameter {
  * @param initParameter parameter for the dynamic translation
  */
 export function initDynamicTr(initParameter: InitDynamicTrParameter) {
+    // TODO: return indication if the initialization is a successs
     setLogLevelByStr(initParameter.logLevel);
     
     let absPathToDynTrData: string;
@@ -229,6 +230,7 @@ function parseJsonLangData(trDataJson: TranslationsDataJson): LangTranslationsDa
  * @param newLang the new lang to apply
  */
 export function lang(newLang: string) {
+    // TODO: return indication it is a successs
     if(dynamicTranslationData.nbBaseTr == 0) {
         // no data loaded
         log(LogLevel.Error, "No data to change translation language");

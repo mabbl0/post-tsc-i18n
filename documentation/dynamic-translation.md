@@ -112,14 +112,15 @@ npx i18n-post-tsc --mode dynamic --srcDir src --outDir dist
 ```
 
 The arguments for the dynamic mode command:
-- mode: 'static' or 'dynamic'. Required
-- srcDir: indicate directory path to find the translation data files. Required
-- outDir: indicate directory path to the JS files with the string to translate. Required
 
-- uniqueOutFile: indicate a unique output JS files (index.js for example). Not Required
-- dynamicTrData: indicate the path from the outDir, to save the data file for the dynamic translation. "dynamicTrData.lang.json" by default. Not required
-- idModuleName: indicate an identifier name to add to every translation id. Not required
-
+| parameter     | description                                                                                                                | required |
+| ---------------| ----------------------------------------------------------------------------------------------------------------------------| ----------|
+| mode          | 'static' or 'dynamic'                                                                                                      | X        |
+| srcDir        | indicate directory path to find the translation data files                                                                 | X        |
+| outDir        | indicate directory path to the JS files with the string to translate                                                       | X        |
+| uniqueOutFile | indicate a unique output JS files (index.js for example)                                                                   |          |
+| dynamicTrData | indicate the path from the outDir, to save the data file for the dynamic translation. "dynamicTrData.lang.json" by default |          |
+| idModuleName  | indicate an identifier name to add to every translation id                                                                 |          |
 
 ## Result
 

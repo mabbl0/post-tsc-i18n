@@ -101,6 +101,7 @@ function parseArgs(): ParsedArgs {
 
 function main(): void {
 	const args = parseArgs();
+    // TODO: verbose by default
     if(args.verbose) {
         setLogLevel(LogLevel.Verbose);
     }

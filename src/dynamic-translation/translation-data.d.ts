@@ -80,5 +80,6 @@ export interface TranslationsDataJson {
 
 interface AccessDynamicStrInterTrJson {
     splitTr: string[]
+    // TODO: no mapIdOrder if empty array
     mapIdOrder: number[]
 }
